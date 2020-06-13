@@ -1,17 +1,26 @@
 #[derive(Debug)]
-enum IpAddrKind {
+enum IpAddrKind { //defined an enum
     V4,
     V6,
 }
-fn main() {
-    println!("Hello, world!");
-    let four = IpAddrKind::V4;
-    let six = IpAddrKind::V6;
-    println!("value of 4 {:?}",four);
-    println!("ip value for V4 is {:?}",route(IpAddrKind::V4));
-    route(IpAddrKind::V6);
-
-
+struct IpAddr { //created a struct with one argument of type IpAddrKind,other string
+    kind: IpAddrKind,
+    adress: String,
 }
-fn route(ip_kind:IpAddrKind) {}
+fn main()
+{
+    let home=IpAddr 
+    {// created an instance of struct home
+      kind : IpAddrKind::V4,
+      adress : String::from("127.0.0.1"),
+    };
+
+let local=IpAddr //another instance of struct IpAddr
+   {
+       kind :IpAddrKind::V6,
+       adress :String::from("::1"), 
+   };
+println!("Local adress is {:?} and version  is {:?}",local.adress,local.kind);
+println!("Home adress is {:?} and version  is {:?}",home.adress,home.kind);
+}
 
